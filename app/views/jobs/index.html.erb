@@ -11,8 +11,8 @@
     </td>
     <td>
    <%= link_to("Edit", edit_job_path(job)) %> |
-   <%= link_to("Destroy", job_path(job), :mothed => :delete, :data => { :confirm => "Are you sure" }) %>
-   
+  <%= link_to("Destroy", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
     </td>
     <td>
       <%= job.created_at %>
