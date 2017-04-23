@@ -6,5 +6,6 @@
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
+<%= f.input :category, label: "职位种类", collection: ["工程师"], as: :check_boxes, checked: @job.category %>
 <%= f.submit "Submit"%>
 <% end %>

@@ -45,30 +45,6 @@
   color: white;
 }
 
-#search-id {
-width: 200px;
-padding-top: 7px;
-}
-.jobs-show0 {
-  border-bottom: 1px dotted #CCC;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 15px;
-  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
-}
-
-.jobs-show {
-  border-bottom: 1px dotted #CCC;
-  padding: 15px;
-  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
-}
-
-.search-info-title {
-  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
-  color: #0d6ded;
-  font-size: 20px;
-  text-align: center;
-}
 
 
 
@@ -166,6 +142,8 @@ padding-top: 7px;
  }
 
 
+
+
  //---------Content---------
 
   .content-section-a {
@@ -196,12 +174,25 @@ padding-top: 7px;
 
 
 
+  .navbar-brand > img {
+      display: inline-block;	//图片和链接文字显示在同一行
+      margin-right: 10px; //图片和链接文字拉开一点距离
+      width: 32px; //定制图片宽度
+      height: 32px; //定制图片高度
+  }
 
 
+  .form-group {
+      margin-bottom: 10px;
+      margin-top: 10px;
+  }
 
-
-
-
+  .input-group {
+      position: relative;
+      display: table;
+      border-collapse: separate;
+      width: 250px; //加上width
+  }
 
 
 
