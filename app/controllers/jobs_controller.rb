@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 before_action :validate_search_key, only: [:search]
-
+ before_action :authenticate_user!, except: [:index, :show]
   def show
     @job = Job.find(params[:id])
     if @job.is_hidden
@@ -15,6 +15,20 @@ before_action :validate_search_key, only: [:search]
       Job.published.order('wage_lower_bound DESC')
     when 'by_upper_bound'
       Job.published.order('wage_upper_bound DESC')
+    when 'by_developer'
+      Job.where(:category => "财务类").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_healthcare'
+      Job.where(:category => "healthcare").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_customer-service'
+      Job.where(:category => "customer-service").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_sales-marketing'
+      Job.where(:category => "sales-marketing").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_legal'
+      Job.where(:category => "legal").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_non-profit'
+      Job.where(:category => "non-profit").recent.paginate(:page => params[:page], :per_page => 5)
+    when 'by_human-resource'
+      Job.where(:category => "human-resource").recent.paginate(:page => params[:page], :per_page => 5)
     else
       Job.published.order('created_at DESC')
     end
